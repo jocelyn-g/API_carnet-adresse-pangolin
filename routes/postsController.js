@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const ObjectID = require('mongoose').Types.ObjectId;
+const bcrypt = require('bcrypt')
 
 const { PostsModel} = require('../models/postsModel')
+
 
 // GET
 router.get('/', (req, res) => {
@@ -16,7 +18,10 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const newRecord = new PostsModel({
         name: req.body.name,
-        role: req.body.role
+        role: req.body.role,
+        email: req.body.email,
+        password: req.body.password,
+        contact: req.body.contact
     });
 
     newRecord.save((err, docs) => {
@@ -32,7 +37,10 @@ router.put("/:id", (req, res) => {
 
     const UpdateRecord = {
         name: req.body.name,
-        role: req.body.role
+        role: req.body.role,
+        email: req.body.email,
+        password: req.body.password,
+        contact: req.body.contact
     };
 
     PostsModel.findByIdAndUpdate(

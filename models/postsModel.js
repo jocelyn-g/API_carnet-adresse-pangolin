@@ -11,6 +11,18 @@ const PostsModel = mongoose.model(
             type: String,
             required: true
         },
+        email: {
+            type: String,
+            required: true,
+        },
+        password: {
+            type: String,
+            required: true,
+        },
+        contact: {
+            type: Array,
+            required: true,
+        },
     },
     "posts"
 );
