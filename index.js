@@ -9,6 +9,7 @@ const auth = require('./routes/auth')
 
 
 
+
 app.use(bodyParser.json());
 app.use(cors())
 app.use('/posts', postsRoutes)

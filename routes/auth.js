@@ -21,6 +21,7 @@ router.post('/login', (req, res) =>{
         let incremente = 0
         let recupId = 0
         let recupPass = ""
+        console.log(docs)
         for(let doc of docs){
             if(doc.email == email) emailValid = true, recupId = incremente, recupPass = doc.password
             else incremente = incremente + 1
